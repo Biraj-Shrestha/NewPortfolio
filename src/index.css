@@ -1,0 +1,103 @@
+@import "tailwindcss";
+
+@theme {
+  --color-background: #050505;
+  --color-surface-900: #0a0a0a;
+  --color-surface-950: #050505;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    @apply bg-background text-white;
+    font-family: "Inter", sans-serif;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: "Outfit", sans-serif;
+  }
+
+  code,
+  pre {
+    font-family: "JetBrains Mono", monospace;
+  }
+}
+
+@layer utilities {
+  .text-cyan-grad {
+    @apply bg-linear-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent;
+  }
+
+  ::selection {
+    @apply bg-cyan-400 text-black;
+  }
+.tile {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 1rem;
+}
+
+.tile::before,
+.tile::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 1rem;
+}
+
+.tile.button > div {
+  box-shadow: inset rgba(0, 0, 0, 0.5) 0 0 0;
+  transition: box-shadow 0.15s ease-in;
+}
+
+.tile.button > div::before {
+  box-shadow: inset rgba(255, 255, 255, 0.5) 0 0 0;
+  transition: box-shadow 0.15s ease-in; 
+}
+
+.tile.button span {
+  transition: transform 0.3s ease-in-out;
+}
+
+.tile.button:hover > div {
+  box-shadow: inset rgba(0, 0, 0, 0.5)
+    calc(0.25rem * var(--height))
+    calc(0.25rem * var(--height))
+    0.6rem;
+}
+
+.tile.button:hover > div::before {
+  box-shadow: inset rgba(255, 255, 255, 0.5)
+    calc(-0.25rem * var(--height))
+    calc(-0.25rem * var(--height))
+    0.6rem;
+}
+
+.tile.button:hover span {
+  transform: translateY(0.1516rem);
+}
+  /* Custom Scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-background;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-white/10 rounded-full hover:bg-cyan-400/50 transition-colors;
+  }
+}
