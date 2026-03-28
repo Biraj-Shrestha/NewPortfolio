@@ -320,4 +320,4 @@ const SocialIcon = ({ href, name, icon }) => {
   );
 };
 
-export default Contact; 
+export default Contact;
