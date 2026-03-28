@@ -235,7 +235,8 @@ const ScrollGrid = () => {
           aspect-ratio: 16 / 13;
         }
 .sticky-container {
-          height: 100vh;}
+          height: 100vh;
+          }
   /* 1. Make the Hero box span both columns in the middle */
   .scaler {
     grid-column: 1 / -1; 
@@ -249,8 +250,6 @@ const ScrollGrid = () => {
         .layer:nth-of-type(1) div:nth-child(2) { grid-column: 2; grid-row: 1; }
         .layer:nth-of-type(1) div:nth-child(3) { grid-column: 1; grid-row: 2; }
         .layer:nth-of-type(1) div:nth-child(4) { grid-column: 2; grid-row: 2; }
-        .layer:nth-of-type(1) div:nth-child(5) { grid-column: 1; grid-row: 3; }
-        .layer:nth-of-type(2) div:nth-child(1) { grid-column: 2; grid-row: 3; }
         .layer:nth-of-type(2) div:nth-child(2) { grid-column: 1; grid-row: 4; }
         .layer:nth-of-type(2) div:nth-child(5) { grid-column: 2; grid-row: 4; }
         .layer:nth-of-type(2) div:nth-child(4) { grid-column: 1; grid-row: 5; }
