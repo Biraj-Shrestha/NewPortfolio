@@ -110,7 +110,7 @@ export default function Home() {
                   />
                   <img
                     className="pointer-events-none object-cover object-center select-none w-full h-full absolute top-0 left-0"
-                    src="/Images/photo.jpg"
+                    src="/Images/photo.png"
                     loading="lazy"
                     alt=""
                   />
