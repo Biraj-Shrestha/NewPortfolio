@@ -237,7 +237,7 @@ const ScrollGrid = () => {
 .sticky-container {
           height: 100vh;
           }
-  /* 1. Make the Hero box span both columns in the middle */
+          
   .scaler {
     grid-column: 1 / -1; 
     grid-row: 3;
