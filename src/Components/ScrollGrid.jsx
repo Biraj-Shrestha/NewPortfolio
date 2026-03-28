@@ -193,67 +193,78 @@ const ScrollGrid = () => {
           position: relative;
         }
 
-        .layer:nth-of-type(1) div:nth-child(1) { grid-column: 1; grid-row: 1; }
-
-        .layer:nth-of-type(1) div:nth-child(2) { grid-column: 2; grid-row: 1; }
-
-        .layer:nth-of-type(1) div:nth-child(3) { grid-column: 3; grid-row: 1; }
-
-        .layer:nth-of-type(1) div:nth-child(4) { grid-column: 4; grid-row: 1; }
-
-        .layer:nth-of-type(1) div:nth-child(5) { grid-column: 5; grid-row: 1; }
-
+        // .layer:nth-of-type(1) div:nth-child(1) { grid-column: 1; grid-row: 1; }
+        // .layer:nth-of-type(1) div:nth-child(2) { grid-column: 2; grid-row: 1; }
+        // .layer:nth-of-type(1) div:nth-child(3) { grid-column: 3; grid-row: 1; }
+        // .layer:nth-of-type(1) div:nth-child(4) { grid-column: 4; grid-row: 1; }
+        // .layer:nth-of-type(1) div:nth-child(5) { grid-column: 5; grid-row: 1; }
         .layer:nth-of-type(2) div:nth-child(1) { grid-column: 1; grid-row: 2; }
-
         .layer:nth-of-type(2) div:nth-child(2) { grid-column: 2; grid-row: 2; }
-
         .layer:nth-of-type(2) div:nth-child(3) { grid-column: 3; grid-row: 2; }
-
         .layer:nth-of-type(2) div:nth-child(4) { grid-column: 4; grid-row: 2; }
-
         .layer:nth-of-type(2) div:nth-child(5) { grid-column: 5; grid-row: 2; }
-
         .layer:nth-of-type(3) div:nth-child(1) { grid-column: 1; grid-row: 3; }
-
         .layer:nth-of-type(3) div:nth-child(2) { grid-column: 2; grid-row: 3; }
-
         .layer:nth-of-type(3) div:nth-child(3) { grid-column: 3; grid-row: 3; }
-
         .layer:nth-of-type(3) div:nth-child(4) { grid-column: 4; grid-row: 3; }
-
         .layer:nth-of-type(3) div:nth-child(5) { grid-column: 5; grid-row: 3; }
 
-        @media (max-width: 768px) {
+ @media (max-width: 768px) {
   .content-wrap .grid {
     grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(7, 1fr); /* Added one extra row for better spacing */
+    grid-template-rows: repeat(5, 1fr); 
     gap: 10px;
     width: 100%;
     max-width: 95vw;
   }
-    .content-wrap .grid img {
-          aspect-ratio: 16 / 13;
-        }
-.sticky-container {
-          height: 100vh;
-          }
-          
+
+  .content-wrap .grid img {
+    aspect-ratio: 16 / 13;
+  }
+
+  .sticky-container {
+    height: 100vh;
+  }
+
+  /* 1. Reset all layer items to hidden by default on mobile */
+  /* This prevents unassigned images (like Buddha) from appearing randomly */
+  .layer > div {
+    display: none;
+  }
+
+  /* 2. Position the Hero (My Projects) */
   .scaler {
     grid-column: 1 / -1; 
-    grid-row: 3;
+    grid-row: 3; /* Middle row */
     z-index: 100;
     width: 100%;
     height: 100%;
+    display: flex;
   }
-    
-        .layer:nth-of-type(1) div:nth-child(1) { grid-column: 1; grid-row: 1; }
-        .layer:nth-of-type(1) div:nth-child(2) { grid-column: 2; grid-row: 1; }
-        .layer:nth-of-type(1) div:nth-child(3) { grid-column: 1; grid-row: 2; }
-        .layer:nth-of-type(1) div:nth-child(4) { grid-column: 2; grid-row: 2; }
-        .layer:nth-of-type(2) div:nth-child(2) { grid-column: 1; grid-row: 4; }
-        .layer:nth-of-type(2) div:nth-child(5) { grid-column: 2; grid-row: 4; }
-        .layer:nth-of-type(2) div:nth-child(4) { grid-column: 1; grid-row: 5; }
-        .layer:nth-of-type(2) div:nth-child(3) { grid-column: 2; grid-row: 5; }
+
+  /* 3. Your Custom Mapping */
+  
+  /* Row 1 */
+  .layer:nth-of-type(1) div:nth-child(3) { display: flex; grid-column: 1; grid-row: 1; }
+  .layer:nth-of-type(1) div:nth-child(1) { display: flex; grid-column: 2; grid-row: 1; }
+
+  /* Row 2 */
+  .layer:nth-of-type(1) div:nth-child(5) { display: flex; grid-column: 1; grid-row: 2; }
+  .layer:nth-of-type(1) div:nth-child(2) { display: flex; grid-column: 2; grid-row: 2; }
+
+  /* Row 3 (Hero is here) - assigning items to the sides if needed, 
+     but your mapping puts items in Row 3 which might overlap the hero. 
+     I've set them to display: flex as requested. */
+  .layer:nth-of-type(2) div:nth-child(1) { display: flex; grid-column: 1; grid-row: 3; }
+  .layer:nth-of-type(3) div:nth-child(1) { display: flex; grid-column: 2; grid-row: 3; } 
+
+  /* Row 4 */
+  .layer:nth-of-type(2) div:nth-child(2) { display: flex; grid-column: 1; grid-row: 4; }
+  .layer:nth-of-type(2) div:nth-child(5) { display: flex; grid-column: 2; grid-row: 4; }
+
+  /* Row 5 */
+  .layer:nth-of-type(2) div:nth-child(1) { display: flex; grid-column: 1; grid-row: 5; }
+  .layer:nth-of-type(2) div:nth-child(4) { display: flex; grid-column: 2; grid-row: 5; }
 }
         `}</style>
 
