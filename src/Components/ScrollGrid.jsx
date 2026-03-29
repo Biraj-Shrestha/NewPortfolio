@@ -235,8 +235,9 @@ const ScrollGrid = () => {
   /* 2. Position the Hero (My Projects) */
   .scaler {
     grid-column: 1 / -1; 
-    grid-row: 3; /* Middle row */
+    grid-row: 3;
     z-index: 100;
+    column-span: 2;
     width: 100%;
     height: 100%;
     display: flex;
@@ -251,18 +252,13 @@ const ScrollGrid = () => {
   /* Row 2 */
   .layer:nth-of-type(1) div:nth-child(5) { display: flex; grid-column: 1; grid-row: 2; }
   .layer:nth-of-type(1) div:nth-child(2) { display: flex; grid-column: 2; grid-row: 2; }
-
-  /* Row 3 (Hero is here) - assigning items to the sides if needed, 
-     but your mapping puts items in Row 3 which might overlap the hero. 
-     I've set them to display: flex as requested. */
+/* Row 3 */
   .layer:nth-of-type(2) div:nth-child(1) { display: flex; grid-column: 1; grid-row: 3; }
-  .layer:nth-of-type(3) div:nth-child(1) { display: flex; grid-column: 2; grid-row: 3; } 
-
-  /* Row 4 */
+  .layer:nth-of-type(3) div:nth-child(1) { display: flex; visibility:hidden; grid-column: 2; grid-row: 3; } 
+/* Row 4 */
   .layer:nth-of-type(2) div:nth-child(2) { display: flex; grid-column: 1; grid-row: 4; }
   .layer:nth-of-type(2) div:nth-child(5) { display: flex; grid-column: 2; grid-row: 4; }
-
-  /* Row 5 */
+/* Row 5 */
   .layer:nth-of-type(2) div:nth-child(1) { display: flex; grid-column: 1; grid-row: 5; }
   .layer:nth-of-type(2) div:nth-child(4) { display: flex; grid-column: 2; grid-row: 5; }
 }
