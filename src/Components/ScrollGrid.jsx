@@ -237,7 +237,6 @@ const ScrollGrid = () => {
     grid-column: 1 / -1; 
     grid-row: 3; /* Middle row */
     z-index: 100;
-    column-span: 2;
     width: 100%;
     height: 100%;
     display: flex;
