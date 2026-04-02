@@ -81,7 +81,7 @@ const Portfolio = () => {
         "/Images/blogPost.png",
       ],
       isLast: true,
-    },
+    }, 
   ];
 
   return (
