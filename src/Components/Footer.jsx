@@ -2,10 +2,6 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import {
-  Facebook,
-  Twitter,
-  Instagram,
-  Linkedin,
   ArrowUp,
   Mail,
   Phone,
@@ -13,6 +9,7 @@ import {
   Send,
 } from "lucide-react";
 import TypingEffect from "./TypeWriter";
+import { FaFacebook, FaInstagram, FaLinkedin, FaTwitter } from "react-icons/fa";
 
 const Footer = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -37,6 +34,34 @@ const Footer = () => {
     { name: "Contact", path: "/contact" },
   ];
 
+   const socials = [
+    {
+      name: "Facebook",
+      icon: <FaFacebook />,
+      url: "https://www.facebook.com/biraj.shrestha.5249",
+      hover: "bg-blue-600",
+    },
+    {
+      name: "Twitter",
+      icon: <FaTwitter />,
+      url: "https://x.com/BirajShres975",
+      hover: "bg-[#1DA1F2]",
+    },
+    {
+      name: "Instagram",
+      icon: <FaInstagram />,
+      url: "https://www.instagram.com/_biraj_shrestha_",
+      hover: "bg-gradient-to-tr from-[#f9ce34] via-[#ee2a7b] to-[#6228d7]",
+    },
+    {
+      name: "LinkedIn",
+      icon: <FaLinkedin />,
+      url: "https://www.linkedin.com/in/biraj-shrestha-6353a22a6",
+      hover: "bg-[#0077B5]",
+    },
+  ];
+
+
   return (
     <footer className="bg-background border-t mx-auto border-white/5 pt-24 pb-12 relative overflow-hidden" id="footer">
       <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[#4246ce]/5 rounded-full blur-[150px] -mr-64 -mt-64" />
@@ -54,37 +79,19 @@ const Footer = () => {
               Thank<span className="text-[#4246ce]">you.</span>
             </Link>
             <TypingEffect/>
-            <div className="flex gap-4">
-              {[
-                {
-                  icon: <Facebook size={20} />,
-                  url: "https://www.facebook.com/biraj.shrestha.5249",
-                  color: "hover:text-blue-500",
-                },
-                {
-                  icon: <Twitter size={20} />,
-                  url: "https://x.com/BirajShres975",
-                  color: "hover:text-[#4246ce]",
-                },
-                {
-                  icon: <Instagram size={20} />,
-                  url: "https://www.instagram.com/_biraj_shrestha_",
-                  color: "hover:text-pink-500",
-                },
-                {
-                  icon: <Linkedin size={20} />,
-                  url: "https://www.linkedin.com/in/biraj-shrestha-6353a22a6",
-                  color: "hover:text-blue-600",
-                },
-              ].map((social, i) => (
-                <a
-                  key={i}
-                  href={social.url}
+            <div className="flex w-full justify-center xl:justify-start items-center relative z-10 gap-4">
+             {socials.map((social) => (
+                <Link
+                  key={social.name}
+                  to={social.url}
                   target="_blank"
-                  className={`w-12 h-12 rounded-2xl bg-white/5 border border-white/5 flex items-center justify-center text-white/40 transition-all duration-300 ${social.color} hover:bg-white/10 hover:border-white/10`}
+                  rel="noopener noreferrer"
+                  aria-label={social.name}
+                  title={social.name}
+                  className={`w-10 h-10 rounded-xl flex items-center justify-center text-xl hover:text-white transition-all duration-300 ${social.hover} hover:hover:-translate-y-1`}
                 >
                   {social.icon}
-                </a>
+                </Link>
               ))}
             </div>
           </div>
@@ -102,7 +109,6 @@ const Footer = () => {
                     onClick={scrollToTop}
                     className="text-white/40 hover:text-[#4246ce] transition-all text-sm font-bold uppercase tracking-widest gap-3 group"
                   >
-                    <div className="w-1.5 h-1.5 rounded-full bg-[#4246ce] scale-0 group-hover:scale-100 transition-transform" />
                     {link.name}
                   </Link>
                 </li>

@@ -110,10 +110,10 @@ const ScrollGrid = () => {
         .scroll-section { min-height: 400vh; position: relative; }
 
         .sticky-container {
-          height: 100vh;
           width: 100%;
           position: sticky;
           top: 0;
+          padding-top: 40px;
           display: flex;
           align-items: center;
           justify-content: center;
@@ -157,25 +157,25 @@ const ScrollGrid = () => {
   overflow: hidden;
 }
           .layer > div >a::before {
-  content: "Click to View";
-  color:white;
-  font-size:25px;
-  font-family:"Outfit";
-  text-align: center;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  position: absolute;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.6);
-  cursor: pointer;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-  border-radius: 1rem;
-}
+          content: "Click to View";
+          color:white;
+          font-size:25px;
+          font-family:"Outfit";
+          text-align: center;
+          display:flex;
+          align-items:center;
+          justify-content:center;
+          position: absolute;
+          inset: 0;
+          background: rgba(0, 0, 0, 0.6);
+          cursor: pointer;
+          opacity: 0;
+          transition: opacity 0.3s ease;
+          border-radius: 1rem;
+        }
           .layer > div > a:hover::before {
           opacity: 1;
-}
+        }
 
         .content-wrap .grid img {
           width: 100%;
@@ -193,11 +193,6 @@ const ScrollGrid = () => {
           position: relative;
         }
 
-        // .layer:nth-of-type(1) div:nth-child(1) { grid-column: 1; grid-row: 1; }
-        // .layer:nth-of-type(1) div:nth-child(2) { grid-column: 2; grid-row: 1; }
-        // .layer:nth-of-type(1) div:nth-child(3) { grid-column: 3; grid-row: 1; }
-        // .layer:nth-of-type(1) div:nth-child(4) { grid-column: 4; grid-row: 1; }
-        // .layer:nth-of-type(1) div:nth-child(5) { grid-column: 5; grid-row: 1; }
         .layer:nth-of-type(2) div:nth-child(1) { grid-column: 1; grid-row: 2; }
         .layer:nth-of-type(2) div:nth-child(2) { grid-column: 2; grid-row: 2; }
         .layer:nth-of-type(2) div:nth-child(3) { grid-column: 3; grid-row: 2; }
@@ -220,10 +215,6 @@ const ScrollGrid = () => {
 
   .content-wrap .grid img {
     aspect-ratio: 16 / 13;
-  }
-
-  .sticky-container {
-    height: 100vh;
   }
 
   /* 1. Reset all layer items to hidden by default on mobile */

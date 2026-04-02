@@ -94,23 +94,6 @@ export default function MasonryGallery() {
         .image-box:hover::before {
           opacity: 0;
         }
-
-        .text-reveal {
-          color: rgba(182, 182, 182, 0.2);
-          background: linear-gradient(to right, #b6b6b6, #b6b6b6) no-repeat;
-          -webkit-background-clip: text;
-          background-clip: text;
-          background-size: 0%;
-          animation: reveal linear forwards;
-          animation-timeline: view();
-          animation-range: entry 100% cover 50%;
-        }
-
-        @keyframes reveal {
-          to {
-            background-size: 100%;
-          }
-        }
       `}</style>
 
       {/* Heading */}

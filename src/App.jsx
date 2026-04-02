@@ -8,6 +8,10 @@ import ScrollGrid from "./Components/ScrollGrid";
 import WordScrollSection from "./Components/WordScroll";
 import MasonryGallery from "./Components/Gallery";
 import ExperienceList from "./Components/ExperienceList";
+import Portfolio from "./Components/Portfolio";
+import LocomotiveScroll from 'locomotive-scroll';
+
+const scroll = new LocomotiveScroll();
 
 function App() {
   return (
@@ -30,6 +34,7 @@ function App() {
                 </section>
                 <section id="photography">
                   <MasonryGallery />
+                  <Portfolio />
                 </section>
                 <section id="experience">
                   <ExperienceList />
